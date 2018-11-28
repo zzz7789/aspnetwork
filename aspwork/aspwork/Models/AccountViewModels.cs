@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace aspwork.Models
+namespace ASPwork.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

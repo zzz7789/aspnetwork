@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/kindeditor/kindeditor-all-min.js"></script>
+<script src="~/kindeditor/kindeditor-all.js"></script>
+<script type="text/javascript">
+    //KindEditor脚本
+    var editor;
+    KindEditor.ready(function(K) {
+        editor = K.create('#editor_id', {
+        });
+    });
+</script>
+
+<h3>发帖</h3>
+@using (Html.BeginForm())
+{
+    <textarea id="editor_id" name="content" style="width:700px;height:300px;"></textarea>
+}

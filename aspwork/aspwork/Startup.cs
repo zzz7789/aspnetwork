@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(aspwork.Startup))]
-namespace aspwork
+[assembly: OwinStartupAttribute(typeof(ASPwork.Startup))]
+namespace ASPwork
 {
     public partial class Startup
     {

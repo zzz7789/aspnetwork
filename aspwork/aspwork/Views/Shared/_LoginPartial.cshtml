@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNet.Identity
-@if (Request.IsAuthenticated)
+﻿@if (Session["username"]!= null)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
@@ -7,16 +6,17 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("你好，" + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("你好，" + Session["username"]+ "!", "Index", "Manage")
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+        <li><a href="/Account/exit">注销</a></li>
     </ul>
     }
 }
 else
 {
     <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("登录", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+
+        <li>@Html.ActionLink("注册", "Register", "Account")</li>
+        <li>@Html.ActionLink("登录", "Login", "Account")</li>
     </ul>
 }

@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace aspwork
+namespace ASPwork
 {
     public class FilterConfig
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息是通过以下项进行控制的
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("aspwork")]
+[assembly: AssemblyTitle("ASPwork")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("aspwork")]
+[assembly: AssemblyProduct("ASPwork")]
 [assembly: AssemblyCopyright("版权所有(C)  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于 typelib 的 ID
-[assembly: Guid("e90a01f8-e540-4e4e-86ab-611a928e0dc4")]
+[assembly: Guid("161f7a82-7df1-4bf4-b21e-4e2a185b737b")]
 
 // 程序集的版本信息由下列四个值组成:
 //
