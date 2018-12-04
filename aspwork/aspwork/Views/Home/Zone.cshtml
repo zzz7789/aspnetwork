@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div>
+        <!--郭志乐-->
+        <table width="1169" height="318" border="2" align="left" cellpadding="0" cellspacing="0" class="fl_tb">
+            <tbody>
+                <tr>
+                    <td colspan="2" bgcolor="#FFFFFF" class="fl_g"><h2> 模块介绍</h2></td>
+                </tr>
+                    @{  DBhelperBase db = new DBhelperBase();
+                        string result = string.Empty;
+                        string sql = "select * from BBSSession ";
+                        System.Data.DataTable table = db.GetTable(sql);
+
+                    }
+                @foreach (System.Data.DataRow row in table.Rows)
+                {
+                <tr>
+                    <td width="563" align="left" class="fl_g">
+                     
+                        <dl style="margin-left: 50px;">
+
+
+                                    <dt> <a href="/topic/list?subject=@row["SID"].ToString()"><img src="~/Content/image/@row["SID"].ToString() .jpg" alt="" width="57" height="57" align="left" /></a></dt>
+                                    <dt>
+                                        @row["SName"]
+                                    </dt>
+                                    <dd> <em>主题: @row["SProfile"]</em>, <em>帖数: @row["STopicCount"]</em> </dd>
+                                    <dd>
+                                        点击数：@row["SClickCount"]
+                                    </dd>
+                                    <dt>&nbsp;</dt>
+                        </dl>
+                    </td>
+                    
+                       </tr>
+                }
+            </tbody>
+        </table>
+    </div> 

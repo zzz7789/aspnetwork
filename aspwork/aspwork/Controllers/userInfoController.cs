@@ -6,16 +6,11 @@ using System.Web.Mvc;
 
 namespace ASPwork.Controllers
 {
-    public class ZoneController : Controller
+    public class userInfoController : System.Web.Mvc.Controller
     {
-        // GET: Zone
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        // GET: userInfo
         [Filler.userfiller]
-        public ActionResult Post()
+        public ActionResult Index()
         {
             return View();
         }

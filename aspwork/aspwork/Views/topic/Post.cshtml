@@ -15,7 +15,10 @@
 </script>
 
 <h3>发帖</h3>
-@using (Html.BeginForm())
+@using (Html.BeginForm("Post", "topic", FormMethod.Post))
 {
-    <textarea id="editor_id" name="content" style="width:700px;height:300px;"></textarea>
+    Html.DropDownList("TUID", "");
+        <span>标题:</span><input type="text" name="title" size="35">
+                   <textarea id="editor_id" name="content" style="width:700px;height:300px;"></textarea>
+    <input type="submit" value="发布">
 }

@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace ASPwork.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : System.Web.Mvc.Controller
     {
-        public ActionResult Index()
+        public ActionResult index()
         {
-            return View();
+
+            return View("Zone");
         }
 
         public ActionResult About()

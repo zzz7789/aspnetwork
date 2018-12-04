@@ -2,9 +2,13 @@
     padding-top: 60px;
     padding-bottom: 20px;
 }
-
-.fl .bm_h {
-    border-width: 1px 0;
-    border-color: #C2D5E3;
-    background: #E5EDF2 
+#hd {
+    margin-top: 30px;
+    width: 948px;
+    height: 70px;
+    border: 1px solid #D3DFDF;
+    background: #FAFAFA url(images/header.jpg) no-repeat 100% 0;
+    color: #069;
+    margin-bottom: 0;
+    position: relative;
 }

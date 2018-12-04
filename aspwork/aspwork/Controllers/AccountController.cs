@@ -1,22 +1,13 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-using System.Web.Mvc;
-
-using Microsoft.Owin.Security;
-using ASPwork.Models;
+﻿using System.Web.Mvc;
 using System.Collections;
 using System.Data;
 
 
 namespace ASPwork.Controllers
 {
-    
 
-    public class AccountController : Controller
+
+    public class AccountController : System.Web.Mvc.Controller
     {
         
         public ViewResult Login()
@@ -45,7 +36,7 @@ namespace ASPwork.Controllers
         {
             DBhelperBase db = new DBhelperBase();
             string result = string.Empty;
-            string sql = "select Pwd from tb_user where Name='"+@Name+"'";
+            string sql = "select Upassword from BBSUser where UName='" + @Name+"'";
             Hashtable ht = new Hashtable();
             ht.Add(@Name, Name);
             DataRow row = db.GetRow(sql, ht);
@@ -55,7 +46,7 @@ namespace ASPwork.Controllers
             }
             else
             {
-                if (Password == row["Pwd"].ToString())
+                if (Password != row["Upassword"].ToString())
                 {
                     result = "输入口令错误";
                 }
@@ -75,7 +66,7 @@ namespace ASPwork.Controllers
         {
             DBhelperBase db = new DBhelperBase();
             string result = string.Empty;
-            string sql = "insert  INTO  tb_user (Name,Pwd) VALUES ('111','11')";
+            string sql = "insert  INTO  BBSUser (UName,Upassword) VALUES ('"+ username + "','"+ password + "')";
              db.Execute(sql);
             Response.Redirect("/home/Index");
             return Content("success");

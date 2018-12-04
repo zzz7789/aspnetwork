@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="/topic/Post">
+    <input type=button value="发帖">
+</a>
+<h3>主题</h3>
+<div><table width="1006" height="29" cellpadding="0" cellspacing="0">
+    <tbody>
+
+        @{  DBhelperBase db = new DBhelperBase();
+            string result = string.Empty;
+            string sql = "select * from BBSTopic where TSID="+ViewBag.subject;
+            System.Data.DataTable table = db.GetTable(sql);
+
+        }
+        @foreach (System.Data.DataRow row in table.Rows)
+        {
+            <tr>
+
+                <th width="283" >
+
+
+                    <em>[ 标题：@row["TTpoic"]]</em> 1
+
+                </th>
+                <td width="388" >
+                    <cite>
+                        回复： @row["TReplyCount"]
+                    </cite>
+                    <em><span>2018-11-21</span></em>
+                </td>
+               <td width="100" class="num">614</td>
+                <td width="225" class="by">
+                    <cite>小张王</cite>
+                    <em>2018-11-21 00:36</em>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table></div>
